@@ -1,14 +1,14 @@
 {
   "name": "mernkit",
-  "version": "1.0.0",
-  "description": "A MERN Kit",
+  "version": "1.0.3",
+  "description": "A MERN Kit with latest libraries integrated for your convinience.",
   "bin": {
     "mernkit": "./bin/mernkit.js"
   },
   "scripts": {
     "start": "node bin/mernkit.js"
   },
-  "keywords": ["mern", "starter", "kit"],
+  "keywords": ["MERN", "StarterKit", "Vitejs", "TailwindCSS" , "React-router-dom", "Expressjs", "MVC", "Nodejs", "Reactjs" ],
   "author": "Your Name",
   "license": "ISC"
 }
