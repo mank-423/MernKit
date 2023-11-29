@@ -42,7 +42,6 @@ my-mern-project
 | | | --components
 | | | --Pages
 | | | --App.jsx
-| |-- package.json
 | |-- .gitignore
 | |-- package.json
 
