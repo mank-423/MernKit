@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Save your time! Don't build repetetive things from scratch",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["MERN", "starter-kit" , "Vite", "Tailwind CSS", "react-router-dom", "Express", "Node" ],
   "author": "",
   "license": "ISC",
   "dependencies": {
