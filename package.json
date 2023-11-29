@@ -1,6 +1,6 @@
 {
   "name": "mernkit",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A MERN Kit with latest libraries integrated for your convinience.",
   "engines": {
     "node": ">=18.0.0"
@@ -11,7 +11,17 @@
   "scripts": {
     "start": "node bin/mernkit.js"
   },
-  "keywords": ["MERN", "StarterKit", "Vitejs", "TailwindCSS" , "React-router-dom", "Expressjs", "MVC", "Nodejs", "Reactjs" ],
-  "author": "Your Name",
+  "keywords": [
+    "MERN",
+    "StarterKit",
+    "Vitejs",
+    "TailwindCSS",
+    "React-router-dom",
+    "Expressjs",
+    "MVC",
+    "Nodejs",
+    "Reactjs"
+  ],
+  "author": "Mayank Kumar",
   "license": "ISC"
 }

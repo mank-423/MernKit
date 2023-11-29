@@ -1,44 +1,24 @@
 #!/usr/bin/env node
-const fs = require('fs-extra');
+const fs = require('fs');
 const path = require('path');
 
 const projectName = process.argv[2] || 'my-mern-project';
 const projectPath = path.join(process.cwd(), projectName);
 
-// async function copyTemplates() {
-//   try {
-//     // Use __dirname for the script's directory
-//     const scriptDir = path.resolve(__dirname);
+// Function to copy a directory
+async function copyDir(src, dest) {
+  await fs.promises.mkdir(dest, { recursive: true });
+  let entries = await fs.promises.readdir(src, { withFileTypes: true });
 
-//     // Copy Front-end template asynchronously
-//     await fs.copy(path.join(scriptDir, '../templates/frontend'), path.join(projectPath, 'frontend'));
+  for (let entry of entries) {
+    let srcPath = path.join(src, entry.name);
+    let destPath = path.join(dest, entry.name);
 
-//     // Copy Backend template asynchronously
-//     await fs.copy(path.join(scriptDir, '../templates/backend'), path.join(projectPath, 'backend'));
-
-//     console.log(`Created a new mernkit project at ${projectPath}`);
-//   } catch (error) {
-//     console.error('Error copying templates:', error);
-//   }
-// }
-
-
-// async function copyTemplates() {
-//     try {
-//       const scriptDir = path.resolve(__dirname);
-  
-//       // Copy Frontend and Backend templates in parallel
-//       await Promise.all([
-//         fs.copy(path.join(scriptDir, '../templates/frontend'), path.join(projectPath, 'frontend')),
-//         fs.copy(path.join(scriptDir, '../templates/backend'), path.join(projectPath, 'backend'))
-//       ]);
-  
-//       console.log(`Created a new mernkit project at ${projectPath}`);
-//     } catch (error) {
-//       console.error('Error copying templates:', error);
-//     }
-//   }
-
+    entry.isDirectory() ?
+      await copyDir(srcPath, destPath) :
+      await fs.promises.copyFile(srcPath, destPath);
+  }
+}
 
 async function copyTemplates() {
   try {
@@ -46,8 +26,8 @@ async function copyTemplates() {
 
     // Copy Frontend and Backend templates in parallel
     await Promise.all([
-      fs.copy(path.join(scriptDir, '../templates/frontend'), path.join(projectPath, 'frontend')),
-      fs.copy(path.join(scriptDir, '../templates/backend'), path.join(projectPath, 'backend'))
+      copyDir(path.join(scriptDir, '../templates/frontend'), path.join(projectPath, 'frontend')),
+      copyDir(path.join(scriptDir, '../templates/backend'), path.join(projectPath, 'backend'))
     ]);
 
     console.log('mernkit setup completed successfully!');
@@ -65,7 +45,5 @@ async function copyTemplates() {
   }
 }
 
-
-  
 // Invoke the asynchronous function
 copyTemplates();
