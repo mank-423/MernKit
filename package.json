@@ -1,0 +1,14 @@
+{
+  "name": "mernkit",
+  "version": "1.0.0",
+  "description": "A MERN Kit",
+  "bin": {
+    "mernkit": "./bin/mernkit.js"
+  },
+  "scripts": {
+    "start": "node bin/mernkit.js"
+  },
+  "keywords": ["mern", "starter", "kit"],
+  "author": "Your Name",
+  "license": "ISC"
+}
