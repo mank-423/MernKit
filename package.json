@@ -1,7 +1,10 @@
 {
   "name": "mernkit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A MERN Kit with latest libraries integrated for your convinience.",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "bin": {
     "mernkit": "./bin/mernkit.js"
   },
